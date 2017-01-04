@@ -1,0 +1,21 @@
+%% Project: cv
+%% Author: Pablo Miangolarra
+%% Last update: 21 November 2016
+%%
+\iftoggle{ES}{\section{Intereses}}{}
+\iftoggle{EN}{\section{Interests}}{}
+\label{sec:courses}
+\begin{minipage}{0.6\linewidth}
+\iftoggle{ES}{Ciencia, innovación y tecnología.\\
+Negocios internacionales y geopolítica.\\}{}
+\iftoggle{EN}{Science, innovation and technology.\\
+International businesses and geopolitics.\\}{}
+\end{minipage}
+\begin{minipage}{0.4\linewidth}
+\iftoggle{ES}{Fútbol y fitness.\\
+Filosofía, literatura y música.\\}{}
+\iftoggle{EN}{Football and fitness.\\
+Philosophy, literature and music.\\}{}
+\end{minipage}
+
+

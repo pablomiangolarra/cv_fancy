@@ -1,0 +1,88 @@
+%!TEX TS-program = xelatex
+\documentclass[]{friggeri-cv}
+\usepackage{afterpage}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{xcolor}
+\hypersetup{
+    pdftitle={},
+    pdfauthor={},
+    pdfsubject={},
+    pdfkeywords={},
+    colorlinks=false,       % no lik border color
+   allbordercolors=white    % white border color for all
+}
+%\addbibresource{bibliography.bib}
+\RequirePackage{xcolor}
+\definecolor{pblue}{HTML}{0395DE}
+
+\begin{document}
+%% CV language selection: Spanish(ES), English(EN). 
+\newtoggle{ES}
+\newtoggle{EN}
+\toggletrue{EN}
+\togglefalse{ES}
+
+%% CV professional profiles: project coordination (CO), systems engineer(SYS) or software engineer (SOFT)
+\newtoggle{CO}
+\newtoggle{SYS}
+\newtoggle{SOFT}
+\togglefalse{CO}
+\togglefalse{SYS}
+\toggletrue{SOFT}
+
+%% Add candidate picture to cv
+\newtoggle{picture}
+\toggletrue{picture}
+%\togglefalse{picture}
+
+\header{Pablo}{Miangolarra}
+{\iftoggle{ES}{Ingeniero software}{}
+\iftoggle{EN}{Software engineer}{}}
+\newline
+\newline 
+\newline
+\newline 
+% Fake text to add separator      
+\fcolorbox{white}{gray}{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{%
+.....
+}}
+
+% In the aside, each new line forces a line break
+\input{1-personal_info}
+\input{4-education}
+\input{2-experience}
+\begin{aside} 
+\vspace{1.25cm}
+\includegraphics[width=3cm]{img/logo_indra.png}
+    ~
+    ~    
+%\color{blue} \rule{\linewidth}{1mm}
+%\textbf{Experiencia destacada} \vspace{2cm}
+\section{\iftoggle{ES}{Paises de residencia}{}
+\iftoggle{EN}{Where I lived}{}}
+	\iftoggle{EN}{\textbf{Spain}}{}
+    \iftoggle{ES}{\textbf{España}}{}
+    \iftoggle{EN}{\textbf{Germany}}{}
+    \iftoggle{ES}{\textbf{Alemania}}{}
+    (Master, 2015)
+    \iftoggle{EN}{\textbf{United Kingdom}}{}
+    \iftoggle{ES}{\textbf{Reino Unido}}{}
+    (Erasmus, 2008)
+    ~
+\section{\iftoggle{ES}{Idiomas}{}
+\iftoggle{EN}{Languages}{}}
+	\iftoggle{ES}{\textbf{Español\\ (Nativo)}}{}
+	\iftoggle{EN}{\textbf{Spanish\\ (Native)}}{}
+    \includegraphics[scale=0.40]{img/5stars.png}
+    \iftoggle{ES}{\textbf{Inglés\\ (C1) }}{}
+	\iftoggle{EN}{\textbf{English\\ (C1) }}{}
+    \includegraphics[scale=0.40]{img/4stars.png}
+    \iftoggle{ES}{\textbf{Alemán\\ (A2) }}{}
+	\iftoggle{EN}{\textbf{German\\ (A2) }}{}
+    \includegraphics[scale=0.40]{img/2stars.png}
+\end{aside}
+\input{9-certifications}
+\input{10-interests}
+
+\end{document}
